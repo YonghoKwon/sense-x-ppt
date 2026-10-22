@@ -463,7 +463,13 @@ function render(i, reveal, dir) {
   s.classList.remove('play', 'fwd', 'back'); void s.offsetWidth;
   if (dir) s.classList.add(dir);
   cur = i; setSteps(reveal);
-  requestAnimationFrame(() => requestAnimationFrame(() => s.classList.add('play')));
+  // start the slide's motion only once its images are downloaded and decoded,
+  // so a cold load (first visit, empty cache) doesn't play the reveal before the picture exists
+  const go = () => { if (cur === i) requestAnimationFrame(() => requestAnimationFrame(() => s.classList.add('play'))); };
+  const pending = [...s.querySelectorAll('img')].filter(im => !im.complete || !im.naturalWidth);
+  if (!pending.length) go();
+  else { let done = false; const fin = () => { if (!done) { done = true; go(); } };
+    Promise.all(pending.map(im => (im.decode ? im.decode() : Promise.resolve()).catch(() => {}))).then(fin); setTimeout(fin, 2500); }
   s.querySelectorAll('canvas.cloud').forEach(cv => cloud(cv, true));
   countFree(s); steps(i).slice(0, reveal).forEach(countIn);
   cnt.textContent = pad(i + 1) + ' / ' + pad(slides.length);
@@ -493,6 +499,8 @@ let tx = null;
 addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, { passive: true });
 addEventListener('touchend', e => { if (tx === null) return; const dx = e.changedTouches[0].clientX - tx; if (Math.abs(dx) > 40) (dx < 0 ? next : prev)(); tx = null; });
 addEventListener('resize', fit);
+// warm every slide's images up front so later slides are ready when reached
+addEventListener('load', () => document.querySelectorAll('#deck img').forEach(im => { if (im.decode) im.decode().catch(() => {}); }));
 fit();
 const h = parseInt(location.hash.slice(1), 10);
 render(h >= 1 && h <= slides.length ? h - 1 : 0, 0, null);
