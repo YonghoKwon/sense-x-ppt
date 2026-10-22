@@ -200,10 +200,10 @@ canvas{display:block}
 .apx .hero{height:504px;overflow:hidden}
 .apx .hero img{width:100%;height:100%;object-fit:cover}
 .apx3 .lcol{position:absolute;left:0;top:0;width:720px}
-.apx3 .coil{height:276px;overflow:hidden}
+.apx3 .coil{height:304px;overflow:hidden}
 .apx3 .coil img{width:100%;height:100%;object-fit:cover}
 .apx3 .cap{font-size:19px;color:var(--grey);margin:10px 0 18px}
-.apx3 .xsec{height:248px;background:#14171C;display:grid;place-items:center}
+.apx3 .xsec{height:232px;background:#14171C;display:grid;place-items:center}
 .apx3 .xsec img{max-height:100%}
 .apx3 .rcol{position:absolute;right:0;top:0;width:664px}
 .apx3 h3{font-size:31px;margin:0 0 16px}
@@ -422,19 +422,17 @@ canvas{display:block}
   <h2><span class="mask"><span style="--d:.15s">같은 방식으로, 제품 출하부두 선적도 미리 검토한다</span></span></h2>
   <div class="body" style="top:220px">
     <div class="lcol">
-      <div class="coil wipe" style="--d:.3s"><img src="assets/sh_coil.jpg" alt="팔레트 위에 적재된 열연·냉연 코일 3D 화면"></div>
-      <div class="cap rise" style="--d:.9s">3D · 코일 적재 상태</div>
-      <div class="xsec step"><img class="wipe" src="assets/sh_xsec.png" alt="횡단면 적재 계획: 열연 HR·냉연 CR 코일 배치와 위험·주의 표시"></div>
+      <div class="coil wipe" style="--d:.3s"><img src="assets/sh_coil2.jpg" alt="C-훅으로 코일을 들어 3단으로 쌓인 열연·냉연 코일 위에 적재하는 3D 화면"></div>
+      <div class="cap rise" style="--d:.9s">3D · C-훅으로 코일 적재 (초록: 다음 적재 위치)</div>
+      <div class="xsec step"><img class="wipe" src="assets/sh_xsec2.png" alt="횡단면 적재 계획: 3단 적재 코일 배치와 주의 표시"></div>
     </div>
     <div class="rcol">
       <h3 class="rise" style="--d:.5s">코일 선적 적재 계획 검토</h3>
-      <dl class="spec2 ul rise" style="--lc:var(--ink);--d:.6s;grid-template-columns:90px 1fr"><dt>대상</dt><dd>열연 HR · 냉연 CR 코일 선적</dd><dt>검토</dt><dd>홀드 24.80 × 18.80 m 횡단면, 실제 OD/ID 비율로 배치</dd><dt>측정</dt><dd>가상 LiDAR 20 Hz · 코일 피팅 중심편차 p95 0.004 m</dd></dl>
+      <dl class="spec2 ul rise" style="--lc:var(--ink);--d:.6s;grid-template-columns:120px 1fr"><dt>대상</dt><dd>열연 HR · 냉연 CR 코일 선적</dd><dt>검토</dt><dd>홀드 24.80 × 18.80 m 횡단면 · 3단 배치</dd><dt>측정</dt><dd>가상 LiDAR 20 Hz · 코일 피팅 중심편차 p95 0.004 m</dd><dt>선박 상태</dt><dd>GM 1.842 m · 횡경사 -0.908° · 흘수 6.279 m</dd></dl>
       <div class="chk step ul" style="--lc:var(--ink)">
-        <small>자동 검토 결과</small>
-        <div><b class="a">위험</b><span>훅 총하중 SWL 초과 (최악 45.000 / 40.000)</span></div>
-        <div><b>주의</b><span>라벨 질량과 밀도 계산값 차이 5% 초과</span></div>
-        <div><b>주의</b><span>포장 냉연 커버·모서리 직접 접촉 손상</span></div>
-        <div><b>주의</b><span>코일 간 직접 접촉 (2개 코일)</span></div>
+        <small>자동 검토 결과&nbsp;&nbsp; <b style="color:var(--ink)">위험 0 · 주의 2</b></small>
+        <div><b class="a">주의</b><span>코일 간 직접 접촉 · 11개 코일</span></div>
+        <div><b class="a">주의</b><span>포장 냉연 커버·모서리 직접 접촉 · 1개 코일</span></div>
       </div>
     </div>
   </div>
