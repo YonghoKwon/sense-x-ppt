@@ -197,6 +197,20 @@ canvas{display:block}
 .g4 .pic img.cover{width:100%;height:100%;object-fit:cover}
 .g4 p{font-size:21px;line-height:1.45;color:var(--grey);margin:16px 0 8px}
 .g4 b{font-size:20px}
+.apx .hero{height:504px;overflow:hidden}
+.apx .hero img{width:100%;height:100%;object-fit:cover}
+.apx3 .lcol{position:absolute;left:0;top:0;width:720px}
+.apx3 .coil{height:276px;overflow:hidden}
+.apx3 .coil img{width:100%;height:100%;object-fit:cover}
+.apx3 .cap{font-size:19px;color:var(--grey);margin:10px 0 18px}
+.apx3 .xsec{height:248px;background:#14171C;display:grid;place-items:center}
+.apx3 .xsec img{max-height:100%}
+.apx3 .rcol{position:absolute;right:0;top:0;width:664px}
+.apx3 h3{font-size:31px;margin:0 0 16px}
+.chk{margin-top:30px;padding-top:14px}
+.chk small{display:block;font-size:18px;color:var(--grey);margin-bottom:6px}
+.chk div{display:grid;grid-template-columns:90px 1fr;font-size:22px;padding:12px 0;border-bottom:1.2px solid var(--rule)}
+.chk div:last-child{border-bottom:none}
 /* HUD outside the slide */
 #hud{position:fixed;left:0;right:0;bottom:0;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));color:#cfcac0;font:14px/1.3 var(--sans);pointer-events:none;opacity:.85}
 #hud .cnt{font-family:var(--num);font-size:16px;letter-spacing:.04em}
@@ -369,38 +383,62 @@ canvas{display:block}
 
 <!-- 11 appendix 1 -->
 <section class="slide apx" data-title="부록 1">
-  <div class="top ul"><b>SENSE-X</b><span>부록 1&nbsp;&nbsp; 원료 하역 적용 예시</span></div>
+  <div class="top ul"><b>SENSE-X</b><span>부록 1&nbsp;&nbsp; 원료 하역 시뮬레이션</span></div>
   <h2><span class="mask"><span style="--d:.15s">같은 가상센서로, 원료 하역도 시뮬레이션한다</span></span></h2>
   <div class="body" style="top:220px">
-    <div class="main"><div class="wipe" style="--d:.3s"><img src="assets/hx_3d.png" alt="원료 하역 3D 화면: 케이프사이즈 선박 상면과 하역기, 붐 끝·운전실 좌·우 LiDAR 위치"></div><div class="cap rise" style="--d:1s">일반 3D · 선박 상면과 하역기, LiDAR 3대 위치</div></div>
+    <div class="main"><div class="wipe hero" style="--d:.3s"><img src="assets/ul_hero.jpg" alt="원료 하역 3D 화면: 케이프사이즈 선박 홀드 위 그랩식 하역기와 그랩"></div><div class="cap rise" style="--d:1s">선박 홀드 위 그랩식 하역기 · Unreal Engine 가상 현장</div></div>
     <div class="side">
       <h3 class="rise" style="--d:.5s">해치 적재 모니터링</h3>
-      <dl class="spec2 ul rise" style="--lc:var(--ink);--d:.6s"><dt>대상</dt><dd>케이프사이즈 · 홀드 05 · 철광석</dd><dt>하역기</dt><dd>그랩식 하역기 (GTSU)</dd><dt>센서</dt><dd>붐 끝&nbsp; Hesai XT32<br>운전실 좌·우&nbsp; Livox Mid-360S</dd><dt>측정 주기</dt><dd>목표 20·10·10 Hz<br>실제 10.0·8.6·10.0 Hz</dd></dl>
+      <dl class="spec2 ul rise" style="--lc:var(--ink);--d:.6s"><dt>대상</dt><dd>케이프사이즈 · 홀드 05 · 철광석</dd><dt>하역기</dt><dd>그랩식 하역기 (GTSU)</dd><dt>센서</dt><dd>붐 끝&nbsp; Hesai XT32<br>운전실 좌·우&nbsp; Livox Mid-360S</dd><dt>측정 주기</dt><dd>목표 20·10·10 Hz<br>실제 20.0·10.0·10.0 Hz</dd></dl>
       <div class="kpi step ul">
-        <div><b class="a" data-count="50.9" data-dec="1">50.9</b><em>%</em><small>남은 적재율</small></div>
-        <div><b data-count="12505" data-dec="0" data-comma="1">12,505</b><em>m³</em><small>남은 부피 (모의)</small></div>
-        <div><b data-count="16.64" data-dec="2">16.64</b><em>m</em><small>최고 높이</small></div>
+        <div><b class="a" data-count="65.0" data-dec="1">65.0</b><em>%</em><small>남은 적재율</small></div>
+        <div><b data-count="15961" data-dec="0" data-comma="1">15,961</b><em>m³</em><small>남은 부피 (모의)</small></div>
+        <div><b data-count="19.55" data-dec="2">19.55</b><em>m</em><small>최고 높이</small></div>
       </div>
     </div>
-    <div class="base ul step"><span class="g">같은 흐름&nbsp;&nbsp;&nbsp;</span><b>가상센서 배치 → PCD 생성 → 적재량 분석 · 하역 재현</b><span class="g">&nbsp;&nbsp;&nbsp;Slab 사행과 동일</span></div>
   </div>
   <div class="foot"><span>AX 해커톤 SEASON 2</span><span class="n">11</span></div>
 </section>
 
 <!-- 12 appendix 2 -->
 <section class="slide apx2" data-title="부록 2">
-  <div class="top ul"><b>SENSE-X</b><span>부록 2&nbsp;&nbsp; 원료 하역 적용 예시</span></div>
+  <div class="top ul"><b>SENSE-X</b><span>부록 2&nbsp;&nbsp; 원료 하역 시뮬레이션</span></div>
   <h2><span class="mask"><span style="--d:.15s">가상 PCD로 적재량을 계산하고, 그랩 하역을 재현한다</span></span></h2>
   <div class="body" style="top:226px">
     <div class="g4">
-      <div class="step"><div class="hd ul bt" style="--lc:var(--ink)"><span class="n a">1</span>점군</div><div class="pic wipe" style="--d:.15s"><img class="cover" src="assets/hx_pc.png" alt="홀드 내부 가상 LiDAR 점군"></div><p>3대의 가상 LiDAR PCD로 홀드 내부 적재면 측정</p><b>관측률&nbsp; 붐 67% · 좌 93% · 우 92%</b></div>
-      <div class="step"><div class="hd ul bt" style="--lc:var(--ink)"><span class="n a">2</span>히트맵</div><div class="pic wipe" style="--d:.15s"><img src="assets/hx_heat.png" alt="상면 높이 히트맵"></div><p>상면 높이 분포를 색으로 표시</p><b>0 ~ 22.5 m</b></div>
-      <div class="step"><div class="hd ul bt" style="--lc:var(--ink)"><span class="n a">3</span>홀드 단면</div><div class="pic wipe" style="--d:.15s"><img src="assets/hx_sec.png" alt="홀드 단면 높이 그래프"></div><p>길이·폭 방향으로 적재 높이 단면 확인</p><b>단면 위치 이동 가능</b></div>
+      <div class="step"><div class="hd ul bt" style="--lc:var(--ink)"><span class="n a">1</span>가상 LiDAR 점군</div><div class="pic wipe" style="--d:.15s"><img class="cover" src="assets/ul_pc.jpg" alt="가상 LiDAR 3대가 만든 홀드와 적재면 점군"></div><p>3대의 가상 LiDAR가 만든 홀드·적재면 PCD</p><b>관측률&nbsp; 붐 54% · 좌 79% · 우 69%</b></div>
+      <div class="step"><div class="hd ul bt" style="--lc:var(--ink)"><span class="n a">2</span>히트맵</div><div class="pic wipe" style="--d:.15s"><img src="assets/ul_heat.png" alt="상면 높이 히트맵"></div><p>상면 높이 분포를 색으로 표시</p><b>0 ~ 22.5 m</b></div>
+      <div class="step"><div class="hd ul bt" style="--lc:var(--ink)"><span class="n a">3</span>홀드 단면</div><div class="pic wipe" style="--d:.15s"><img src="assets/ul_sec.png" alt="홀드 단면 높이 그래프"></div><p>길이·폭 방향으로 적재 높이 단면 확인</p><b>단면 위치 이동 가능</b></div>
       <div class="step"><div class="hd ul bt" style="--lc:var(--ink)"><span class="n a">4</span>그랩 퍼내기</div><div class="pic wipe" style="--d:.15s"><img class="cover" src="assets/hx_dig.png" alt="그랩으로 퍼낸 홀드 적재면"></div><p>그랩으로 퍼낸 만큼 적재면 변화 재현</p><b>퍼낸 양 누적 92.43 m³</b></div>
     </div>
-    <div class="base ul step"><span class="g">하역 중 화면 기준&nbsp;&nbsp;&nbsp;</span><b>남은 적재율 50.9% → 50.0% · 남은 부피 12,505 → 12,279 m³ (모의)</b></div>
+    <div class="base ul step"><span class="g">같은 흐름&nbsp;&nbsp;&nbsp;</span><b>가상센서 배치 → PCD 생성 → 적재량 분석 · 하역 재현</b><span class="g">&nbsp;&nbsp;&nbsp;Slab 사행과 동일</span></div>
   </div>
   <div class="foot"><span>AX 해커톤 SEASON 2</span><span class="n">12</span></div>
+</section>
+
+<!-- 13 appendix 3 -->
+<section class="slide apx3" data-title="부록 3">
+  <div class="top ul"><b>SENSE-X</b><span>부록 3&nbsp;&nbsp; 제품 출하부두 선적 시뮬레이션</span></div>
+  <h2><span class="mask"><span style="--d:.15s">같은 방식으로, 제품 출하부두 선적도 미리 검토한다</span></span></h2>
+  <div class="body" style="top:220px">
+    <div class="lcol">
+      <div class="coil wipe" style="--d:.3s"><img src="assets/sh_coil.jpg" alt="팔레트 위에 적재된 열연·냉연 코일 3D 화면"></div>
+      <div class="cap rise" style="--d:.9s">3D · 코일 적재 상태</div>
+      <div class="xsec step"><img class="wipe" src="assets/sh_xsec.png" alt="횡단면 적재 계획: 열연 HR·냉연 CR 코일 배치와 위험·주의 표시"></div>
+    </div>
+    <div class="rcol">
+      <h3 class="rise" style="--d:.5s">코일 선적 적재 계획 검토</h3>
+      <dl class="spec2 ul rise" style="--lc:var(--ink);--d:.6s;grid-template-columns:90px 1fr"><dt>대상</dt><dd>열연 HR · 냉연 CR 코일 선적</dd><dt>검토</dt><dd>홀드 24.80 × 18.80 m 횡단면, 실제 OD/ID 비율로 배치</dd><dt>측정</dt><dd>가상 LiDAR 20 Hz · 코일 피팅 중심편차 p95 0.004 m</dd></dl>
+      <div class="chk step ul" style="--lc:var(--ink)">
+        <small>자동 검토 결과</small>
+        <div><b class="a">위험</b><span>훅 총하중 SWL 초과 (최악 45.000 / 40.000)</span></div>
+        <div><b>주의</b><span>라벨 질량과 밀도 계산값 차이 5% 초과</span></div>
+        <div><b>주의</b><span>포장 냉연 커버·모서리 직접 접촉 손상</span></div>
+        <div><b>주의</b><span>코일 간 직접 접촉 (2개 코일)</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>AX 해커톤 SEASON 2</span><span class="n">13</span></div>
 </section>
 
 </div></div>
